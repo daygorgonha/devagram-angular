@@ -1,5 +1,5 @@
 import { AbstractControl } from '@angular/forms';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-publico',
@@ -21,6 +21,7 @@ export class InputPublicoComponent implements OnInit {
   public aoModificarCampo(): void {
     this.referenciaFormulario?.setValue(event);
     this.referenciaFormulario?.markAsDirty;
+    console.log(event);
   }
 
   public obterMensagemErro(): string {
@@ -30,6 +31,18 @@ export class InputPublicoComponent implements OnInit {
 
     if (this.referenciaFormulario?.errors['required']) {
       return 'Campo Obrigatorio!';
+    }
+
+    if (this.referenciaFormulario?.errors['email']) {
+      return 'Insira um email válido!';
+    }
+
+    if (this.referenciaFormulario?.errors['minlength']) {
+      return `Deve ter no mínimo ${this.referenciaFormulario.errors['minlength'].requiredLength} caracteres.`;
+    }
+
+    if (this.referenciaFormulario?.errors['confirmacaoSenha']) {
+      return 'As senhas não conferem!';
     }
 
     return 'Problemas no preenchimento!'

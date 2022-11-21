@@ -1,0 +1,22 @@
+<section [ngClass]="['containerPaginaPublica', classeCssCustomizada]">
+  <div [ngClass]="['containerLogo', classeCssLogo]">
+    <img
+      src="assets/imagens/logo.svg"
+      alt="Logo Devaria"
+      class="logo"
+    />
+  </div>
+
+  <div class="containerConteudo">
+    <form (submit)="aoSubmeter()">
+      <ng-content select="[conteudoFormulario]"></ng-content>
+      <app-botao
+        [texto]="textoBotaoSubmit"
+        type="submit"
+        classCss="botaoPublico"
+      ></app-botao>
+    </form>
+
+    <ng-content select="[rodape]"></ng-content>
+  </div>
+</section>

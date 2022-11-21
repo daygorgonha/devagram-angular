@@ -1,3 +1,5 @@
+import { CadastroModule } from './cadastro/cadastro.module';
+import { LoginModule } from './login/login.module';
 import { CompartilhadoModule } from './compartilhado/compartilhado.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -16,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CompartilhadoModule,
     ReactiveFormsModule,
     FormsModule,
+    LoginModule,
+    CadastroModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
