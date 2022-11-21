@@ -21,7 +21,6 @@ export class InputPublicoComponent implements OnInit {
   public aoModificarCampo(): void {
     this.referenciaFormulario?.setValue(event);
     this.referenciaFormulario?.markAsDirty;
-    console.log(event);
   }
 
   public obterMensagemErro(): string {

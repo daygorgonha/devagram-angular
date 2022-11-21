@@ -8,12 +8,14 @@
   </div>
 
   <div class="containerConteudo">
-    <form (submit)="aoSubmeter()">
+    <form
+    ,>
       <ng-content select="[conteudoFormulario]"></ng-content>
       <app-botao
         [texto]="textoBotaoSubmit"
         type="submit"
         classCss="botaoPublico"
+        (click)="aoSubmeter()"
       ></app-botao>
     </form>
 
