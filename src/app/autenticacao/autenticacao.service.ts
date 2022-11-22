@@ -1,3 +1,4 @@
+import { UsuarioLogado } from './usuario-logado.type';
 import { CredenciaisDevagram } from './credenciais-devagram.type';
 import { DevagramUsuarioApiService } from './../compartilhado/servicos/devagram-usuario-api.service';
 import { DevagramApiService } from './../compartilhado/servicos/devagram-api.service';
@@ -30,7 +31,7 @@ export class AutenticacaoService extends DevagramApiService {
     localStorage.setItem('nome', respostaLogin.nome);
     localStorage.setItem('email', respostaLogin.email);
 
-    const dadosUsuario = await this.usuarioApiService.bucarDadosUsuario();
+    const dadosUsuario = await this.usuarioApiService.buscarDadosUsuario();
     localStorage.setItem("id", dadosUsuario._id);
 
     if (dadosUsuario.avatar) {
@@ -48,6 +49,21 @@ export class AutenticacaoService extends DevagramApiService {
     localStorage.removeItem('token');
     localStorage.removeItem('nome');
     localStorage.removeItem('email');
+    localStorage.removeItem('avatar');
+    localStorage.removeItem('id');
     this.router.navigateByUrl('/login');
+  }
+
+  obterUsuarioLogado(): UsuarioLogado | null {
+    if (!this.estaLogado()) {
+      return null;
+    }
+
+    return {
+      id: localStorage.getItem('id'),
+      nome: localStorage.getItem('nome'),
+      email: localStorage.getItem('email'),
+      avatar: localStorage.getItem('avatar'),
+    } as UsuarioLogado
   }
 }

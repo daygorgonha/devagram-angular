@@ -6,8 +6,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DevagramUsuarioApiService extends DevagramApiService{
-  bucarDadosUsuario(): Promise<UsuarioDevagram> {
+  public buscarDadosUsuario(): Promise<UsuarioDevagram> {
     return this.get('usuario');
+  }
+
+  public pesquisarUsuario(filtro: string): Promise<Array<UsuarioDevagram>> {
+    return this.get('pesquisa?filtro=' + filtro);
   }
 
 }
