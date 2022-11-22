@@ -66,3 +66,13 @@ input {
     display: none !important;
   }
 }
+
+.laytoutInterno {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .conteudoInterno {
+    flex: 1;
+  }
+}

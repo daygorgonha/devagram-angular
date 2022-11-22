@@ -1,0 +1,54 @@
+@import '../../../assets/estilos/variaveis.scss';
+
+.cabecalhoPrincipal {
+  border-bottom: 0.5px solid  var(--cinza1);
+
+  .conteudoCabecalhoPrincipal {
+    dispĺay: flex;
+    padding: 8px 16px;
+
+    .barraPesquisa {
+      position: relative;
+      display: flex;
+      flex: 1;
+      margin-left: 16px;
+      align-items: center;
+
+      .iconePesquisa {
+        position: absolute;
+        top: 5px;
+        left: 8px;
+      }
+
+      input {
+        width: 100%;
+        background-color: var(--corPrimaria3);
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        font-size: 12px;
+        color: var(--corPrimaria);
+        padding: 8px 8px 8px 36px;
+
+        &:focus {
+          border: 1px solid var(--corPrimaria);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpointDesktop) {
+    border: none;
+    margin-bottom: 35px;
+
+    .conteudoCabecalhoPrincipal {
+      width: 60%;
+      margin: auto;
+      justify-content: center;
+
+      .barraPesquisa {
+        flex: 0.40;
+      }
+    }
+  }
+}
