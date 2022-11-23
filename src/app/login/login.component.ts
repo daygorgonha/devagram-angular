@@ -24,10 +24,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public aoTrocarImagem() {
-    console.log('imagem alterada');
-  }
-
   public obterReferencia(nomeCampo: string): AbstractControl {
     return this.form.controls[nomeCampo];
   }
