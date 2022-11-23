@@ -12,12 +12,12 @@
       [type]="tipo"
       [placeholder]="placeholder"
       [ngModel]="referenciaFormulario?.value"
-      (ngModelChange)="aoModificarCampo()"
+      (ngModelChange)="aoModificarCampo($event)"
     >
   </div>
 
   <p *ngIf="referenciaFormulario?.invalid && referenciaFormulario?.dirty"
     class="mensagemErro">
-    {{obterMensagemErro()}}
+    {{ obterMensagemErro() }}
   </p>
 </div>

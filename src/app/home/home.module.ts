@@ -8,12 +8,12 @@ import { LayoutModule } from './../layout/layout.module';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    LayoutModule
+    LayoutModule,
   ]
 })
 export class HomeModule { }

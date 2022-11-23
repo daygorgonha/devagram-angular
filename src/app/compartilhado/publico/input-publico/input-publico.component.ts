@@ -1,5 +1,5 @@
 import { AbstractControl } from '@angular/forms';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-publico',
@@ -18,7 +18,7 @@ export class InputPublicoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public aoModificarCampo(): void {
+  public aoModificarCampo(event: any): void {
     this.referenciaFormulario?.setValue(event);
     this.referenciaFormulario?.markAsDirty;
   }

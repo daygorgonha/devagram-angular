@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   public async submit(): Promise<void> {
     if (this.form.invalid) {
-      alert('Oreencha os dados corretamente!');
+      alert('Preencha os dados corretamente!');
       return;
     }
 
