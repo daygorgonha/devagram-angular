@@ -1,3 +1,4 @@
+import { CompartilhadoModule } from './../compartilhado/compartilhado.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,6 +15,7 @@ import { LayoutModule } from './../layout/layout.module';
     CommonModule,
     HomeRoutingModule,
     LayoutModule,
+    CompartilhadoModule
   ]
 })
 export class HomeModule { }

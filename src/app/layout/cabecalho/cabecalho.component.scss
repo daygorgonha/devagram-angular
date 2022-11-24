@@ -73,17 +73,24 @@
       margin: auto;
       justify-content: center;
 
+      .logoCabecalho {
+        width: 150px;
+        img {
+          width: 100%;
+        }
+      }
+
       .barraPesquisa {
         flex: 0.40;
       }
     }
 
     .containerResultadoPesquisa {
-      width: 17%;
+      width: 18%;
       border-top: none;
       margin: auto;
       right: 0;
-      left: 35px;
+      left: 45px;
       cursor: pointer;
       box-shadow: 0px 4px 5px var(--cinza1);
 
