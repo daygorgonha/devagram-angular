@@ -3,12 +3,14 @@
 .cabecalhoPrincipal {
   border-bottom: 0.5px solid  var(--cinza1);
 
+
   .conteudoCabecalhoPrincipal {
     dispĺay: flex;
     padding: 8px 16px;
 
     .barraPesquisa {
       position: relative;
+      float: right;
       display: flex;
       flex: 1;
       margin-left: 16px;
@@ -66,7 +68,7 @@
 
   @media screen and (min-width: $breakpointDesktop) {
     border: none;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 
     .conteudoCabecalhoPrincipal {
       width: 60%;

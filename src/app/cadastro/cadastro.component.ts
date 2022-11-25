@@ -19,7 +19,7 @@ export class CadastroComponent implements OnInit {
     ) {
     this.form = this.fb.group({
       file: [null],
-      nome: ['', [Validators.required, Validators.minLength(4)]],
+      nome: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(4)]],
       confirmacaoSenha: ['', [Validators.required, confirmacaoSenha()]],
@@ -41,21 +41,20 @@ export class CadastroComponent implements OnInit {
 
     try {
       const valoresDoFormulario = this.form.value;
-      let corpoDaRequisicao = valoresDoFormulario;
+      const corpoDaRequisicao = new FormData();
+      corpoDaRequisicao.append('nome', valoresDoFormulario.nome);
+      corpoDaRequisicao.append('email', valoresDoFormulario.email);
+      corpoDaRequisicao.append('senha', valoresDoFormulario.senha);
 
       if (valoresDoFormulario.file){
-        corpoDaRequisicao = new FormData();
         corpoDaRequisicao.append('file', valoresDoFormulario.file);
-        corpoDaRequisicao.append('nome', valoresDoFormulario.nome);
-        corpoDaRequisicao.append('email', valoresDoFormulario.email);
-        corpoDaRequisicao.append('senha', valoresDoFormulario.senha);
-
       }
+      console.log(corpoDaRequisicao)
       await this.servicoCadastro.cadastrar(corpoDaRequisicao);
       await this.autenticacaoService.login({
         login: valoresDoFormulario.email,
         senha: valoresDoFormulario.senha
-      })
+      });
     }catch (excecao: any) {
       const mensagemErro = excecao?.error?.erro || 'Erro ao realizar o cadastro'
       alert(mensagemErro);

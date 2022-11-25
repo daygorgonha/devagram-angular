@@ -42,6 +42,10 @@
       align-items: center;
       margin-bottom: 8px;
 
+      > img {
+        cursor: pointer;
+      }
+
       .iconeComentario {
         margin-left: 8px;
         margin-right: 8px;
@@ -68,10 +72,14 @@
       .exibirMais {
         font-size: 12px;
         color: var(--corPrimaria2);
+        cursor: pointer;
       }
     }
 
     .comentarios {
+      max-height: 80px;
+      overflow-y: auto;
+
       .comentario {
         margin-bottom: 5px;
 
@@ -104,6 +112,10 @@
       color: var(--corPrimaria);
       font-size: 14px;
       border: none;
+
+      &:disabled {
+        opacity: 0.85;
+      }
     }
   }
 
@@ -121,7 +133,9 @@
       }
 
       .fotoPostagem {
-        max-height: 500px;
+        img {
+          max-height: 500px;
+        }
       }
 
       .rodapePostagem {
@@ -132,6 +146,7 @@
         .acoesPostagem {
           > img {
             width: 27px;
+            height: 27px;
           }
 
           .curtidas {

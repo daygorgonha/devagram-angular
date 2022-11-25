@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CadastroService extends DevagramApiService {
-  cadastrar(dadosCadastro: Cadastro): Promise<RespostaApiDevagram> {
+  cadastrar(dadosCadastro: FormData): Promise<RespostaApiDevagram> {
     return this.post('cadastro', dadosCadastro)
   }
 }

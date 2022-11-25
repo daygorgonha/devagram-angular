@@ -16,32 +16,21 @@ export class FeedComponent implements OnInit {
     {
       quantidadeCurtidas: 32,
       descricao: '',
-      comentarios: [
-        {
-          nome: 'Usuario1',
-          comentario: 'Oi'
-        }
-      ],
       usuario: {
-        nome: 'Usuario 1',
+        nome: 'Florentina de Jesus',
       },
-      foto: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ffr.123rf.com%2Fphoto_57845256_vector-visage-f%25C3%25A9minin-avatar-logo-mod%25C3%25A8le-pictogramme-bouton-ic%25C3%25B4ne-plat-rond-%25C3%25A0-la-mode-avec-des-femme.html&psig=AOvVaw0iBqJp8861P1PAzLGXOy_V&ust=1669325237525000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDlmKCfxfsCFQAAAAAdAAAAABAU'
+      foto: 'https://i.pinimg.com/originals/be/2a/b2/be2ab2886bf8e57423e5df0fd8e94130.png'
     } as Postagem,
     {
       quantidadeCurtidas: 32,
       descricao: '',
-      comentarios: [
-        {
-          nome: 'Usuario2',
-          comentario: 'Oi'
-        }
-      ],
       usuario: {
-        nome: 'Usuario 2',
+        nome: 'Maria do Socorro',
       },
-      foto: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ffr.123rf.com%2Fphoto_57845256_vector-visage-f%25C3%25A9minin-avatar-logo-mod%25C3%25A8le-pictogramme-bouton-ic%25C3%25B4ne-plat-rond-%25C3%25A0-la-mode-avec-des-femme.html&psig=AOvVaw0iBqJp8861P1PAzLGXOy_V&ust=1669325237525000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDlmKCfxfsCFQAAAAAdAAAAABAU'
-    } as Postagem
+      foto: 'https://artpoin.com/wp-content/uploads/2022/08/flork-fofoqueiro12.png'
+    } as Postagem,
   ];
+
   constructor(private servicoAutenticacao : AutenticacaoService) {
     this.usuarioLogado = this.servicoAutenticacao.obterUsuarioLogado();
    }
