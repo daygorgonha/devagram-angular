@@ -14,4 +14,8 @@ export class DevagramUsuarioApiService extends DevagramApiService{
     return this.get('pesquisa?filtro=' + filtro);
   }
 
+  public obterInformacoesDoPerfil(idUsuario: string): Promise<UsuarioDevagram> {
+    return this.get('pesquisa?id=' + idUsuario);
+  }
+
 }

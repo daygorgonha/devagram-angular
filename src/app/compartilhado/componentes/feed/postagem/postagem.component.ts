@@ -3,6 +3,7 @@ import { UsuarioLogado } from '../../../autenticacao/usuario-logado.type';
 import { Postagem } from './../postagem.type';
 import { Component, Input, OnInit } from '@angular/core';
 import { confirmacaoSenha } from 'src/app/compartilhado/validadores/confirmacao-senha.validator';
+import { throwIfEmpty } from 'rxjs';
 
 const limiteCaracteresDescricaoPadrao = 90;
 
@@ -103,7 +104,7 @@ export class PostagemComponent implements OnInit {
   public validarComentario(): boolean {
     return (
       !this.estaFazendoRequisicaoParaBackend
-      && this.comentarioAtual.length >= 3
+      && this.comentarioAtual.trim().length >= 3
     );
   }
 }

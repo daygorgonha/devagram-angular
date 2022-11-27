@@ -9,7 +9,7 @@ import { RespostaApiDevagram } from '../../tipos/resposta-api-devagram.type';
 export class FeedService extends DevagramApiService {
   async carregarPostagens(idUsuario?: string): Promise<Array<Postagem>> {
     return this.get(
-
+      'feed' + (idUsuario ? `?id=${idUsuario}` : '')
     );
   }
 
