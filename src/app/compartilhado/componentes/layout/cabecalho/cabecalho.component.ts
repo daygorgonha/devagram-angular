@@ -1,6 +1,6 @@
-import { AutenticacaoService } from './../../autenticacao/autenticacao.service';
-import { DevagramUsuarioApiService } from './../../compartilhado/servicos/devagram-usuario-api.service';
-import { UsuarioDevagram } from './../../compartilhado/tipos/usuario-devagram.type';
+import { AutenticacaoService } from '../../../autenticacao/autenticacao.service';
+import { DevagramUsuarioApiService } from '../../../servicos/devagram-usuario-api.service';
+import { UsuarioDevagram } from '../../../tipos/usuario-devagram.type';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { JitCompilerFactory } from '@angular/platform-browser-dynamic';

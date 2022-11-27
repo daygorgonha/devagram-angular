@@ -1,4 +1,4 @@
-import { UsuarioLogado } from './../../../../autenticacao/usuario-logado.type';
+import { UsuarioLogado } from '../../../autenticacao/usuario-logado.type';
 import { Postagem } from './../postagem.type';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -34,7 +34,7 @@ export class PostagemComponent implements OnInit {
 
   public obterImagemCurtida(): string {
     console.log('obterImagemCurtida');
-    return '';
+    return `assets/imagens/curtir.svg`;
   }
 
   public manipularCurtida(): string {

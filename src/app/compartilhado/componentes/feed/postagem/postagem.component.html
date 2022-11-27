@@ -1,9 +1,11 @@
 <div class="containerPostagem">
-
   <a [routerLink]="obterUrlPerfil()">
     <div class="cabecalhoPostagem">
-        <app-avatar classeCss="feedDesktop" [src]="postagem.usuario?.avatar"></app-avatar>
-        <strong>{{ postagem.usuario?.nome }}</strong>
+      <app-avatar
+        classeCss="feedDesktop"
+        [src]="postagem.usuario?.avatar"
+      ></app-avatar>
+      <strong>{{ postagem.usuario?.nome }}</strong>
     </div>
   </a>
 
@@ -14,61 +16,81 @@
   <div class="rodapePostagem">
     <div class="acoesPostagem">
       <img
-       class="iconeCurtida"
-       [src]="obterImagemCurtida()"
-       alt="Icone curtir"
-       (click)="manipularCurtida()"
+        [src]="obterImagemCurtida()"
+        alt="Icone curtir"
+        (click)="manipularCurtida()"
       />
 
       <img
-          class="iconeComentario"
-          [src]="obterImagemComentario()"
-          alt="Icone comentar"
-          (click)="alternarExibicaoCaixaDeComentario()"
+        class="iconeComentario"
+        [src]="obterImagemComentario()"
+        alt="Icone comentar"
+        (click)="alternarExibicaoCaixaDeComentario()"
       />
 
       <span class="curtidas">
-          Curtido por <strong>{{ postagem.quantidadeCurtidas }} pessoas</strong>
+        Curtido por <strong>{{ postagem.quantidadeCurtidas }} pessoas</strong>
       </span>
     </div>
 
-  <div class="descricaoPostagem">
+    <div class="descricaoPostagem">
       <strong class="nomeUsuario">
-          {{ postagem.usuario?.nome }}
+        {{ postagem.usuario?.nome }}
       </strong>
 
       <p class="descricao">
-          {{ postagem.descricao.substring(0, limiteCaracteresDescricao).trim() }}
+        {{ postagem.descricao.substring(0, limiteCaracteresDescricao).trim() }}
 
-          <span class="tresPontinhos" *ngIf="postagem.descricao.length > limiteCaracteresDescricao">
-              ...
-          </span>
+        <span
+          class="tresPontinhos"
+          *ngIf="postagem.descricao.length > limiteCaracteresDescricao"
+        >
+          ...
+        </span>
 
-          <span *ngIf="postagem.descricao.length > limiteCaracteresDescricao" class="exibirMais"
-              (click)="exibirDescricaoCompleta()">
-              mais
-          </span>
+        <span
+          *ngIf="postagem.descricao.length > limiteCaracteresDescricao"
+          class="exibirMais"
+          (click)="exibirDescricaoCompleta()"
+        >
+          mais
+        </span>
       </p>
-  </div>
- </div>
+    </div>
 
- <div class="caixaComentario" *ngIf="deveExibirCaixaComentario">
-  <app-avatar classeCss="feedDesktop" [src]="usuarioLogado?.avatar"></app-avatar>
+    <div class="comentarios">
+      <div class="comentario" *ngFor="let comentario of postagem.comentarios">
+        <strong class="nomeUsuario">
+          {{ comentario.nome }}
+        </strong>
+
+        <p class="descricao">
+          {{ comentario.comentario }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="caixaComentario" *ngIf="deveExibirCaixaComentario">
+    <app-avatar
+      classeCss="feedDesktop"
+      [src]="usuarioLogado?.avatar"
+    ></app-avatar>
     <textarea
-        (keyup)="verificarQuantidadeLinhas()"
-        (keyup.enter)="fazerComentario()"
-        [rows]="quantidadeLinhasTextarea"
-        [(ngModel)]="comentarioAtual"
-        autofocus="true"
-        placeholder="Adicione um comentario..."
+      (keyup)="verificarQuantidadeLinhas()"
+      (keyup.enter)="fazerComentario()"
+      [rows]="quantidadeLinhasTextarea"
+      [(ngModel)]="comentarioAtual"
+      autofocus="true"
+      placeholder="Adicione um comentario..."
     ></textarea>
 
     <button
-        type="button"
-        class="btnPublicar desktop"
-        (click)="fazerComentario()"
+      type="button"
+      class="btnPublicar desktop"
+      (click)="fazerComentario()"
     >
-        Publicar
+      Publicar
     </button>
   </div>
 </div>

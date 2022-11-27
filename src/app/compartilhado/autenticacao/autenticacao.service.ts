@@ -1,7 +1,7 @@
 import { UsuarioLogado } from './usuario-logado.type';
 import { CredenciaisDevagram } from './credenciais-devagram.type';
-import { DevagramUsuarioApiService } from './../compartilhado/servicos/devagram-usuario-api.service';
-import { DevagramApiService } from './../compartilhado/servicos/devagram-api.service';
+import { DevagramUsuarioApiService } from '../servicos/devagram-usuario-api.service';
+import { DevagramApiService } from '../servicos/devagram-api.service';
 import { HttpClient } from '@angular/common/http';
 import { RespostaLoginDevagram } from './resposta-login-devagram.type';
 import { Inject, Injectable } from '@angular/core';

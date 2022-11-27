@@ -1,3 +1,5 @@
+import { NavegacaoComponent } from './componentes/layout/navegacao/navegacao.component';
+import { RodapeComponent } from './componentes/layout/rodape/rodape.component';
 import { DevagramApiInterceptador } from './servicos/devagram-api-interceptador.service';
 import { environment } from './../../environments/environment.prod';
 import { RouterModule } from '@angular/router';
@@ -13,6 +15,7 @@ import { PaginaPublicaComponent } from './componentes/publico/pagina-publica/pag
 import { RodapePaginaPublicaComponent } from './componentes/publico/rodape-pagina-publica/rodape-pagina-publica.component';
 import { FeedComponent } from './componentes/feed/feed.component';
 import { PostagemComponent } from './componentes/feed/postagem/postagem.component';
+import { CabecalhoComponent } from './componentes/layout/cabecalho/cabecalho.component';
 
 
 
@@ -36,7 +39,10 @@ import { PostagemComponent } from './componentes/feed/postagem/postagem.componen
     PaginaPublicaComponent,
     RodapePaginaPublicaComponent,
     FeedComponent,
-    PostagemComponent
+    PostagemComponent,
+    CabecalhoComponent,
+    RodapeComponent,
+    NavegacaoComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +58,9 @@ import { PostagemComponent } from './componentes/feed/postagem/postagem.componen
     PaginaPublicaComponent,
     RodapePaginaPublicaComponent,
     FeedComponent,
-    PostagemComponent
+    PostagemComponent,
+    CabecalhoComponent,
+    RodapeComponent
   ]
 })
 export class CompartilhadoModule { }
