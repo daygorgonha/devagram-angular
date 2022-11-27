@@ -88,6 +88,7 @@
     <button
       type="button"
       class="btnPublicar desktop"
+      [disabled]="!validarComentario()"
       (click)="fazerComentario()"
     >
       Publicar
