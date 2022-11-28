@@ -2,13 +2,15 @@
   (click)="inputArquivo.click()"
 >
 
-  <div class="containerPreVisualizacao" *ngIf="imagemPrevisualizacao">
+  <div class="containerPrevisualizacao" *ngIf="imagemPrevisualizacao">
     <img
       [src]="imagemPrevisualizacao"
       alt="Imagem pre visualizacao"
       [class]="classeCssImagemPrevisualizacao"
     />
   </div>
+
+    <ng-content></ng-content>
 
   <input
     type="file"
