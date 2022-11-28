@@ -1,3 +1,5 @@
+import { AutenticacaoService } from './../compartilhado/autenticacao/autenticacao.service';
+import { UsuarioLogado } from './../compartilhado/autenticacao/usuario-logado.type';
 import { UsuarioDevagram } from './../compartilhado/tipos/usuario-devagram.type';
 import { DevagramUsuarioApiService } from './../compartilhado/servicos/devagram-usuario-api.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,16 +12,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
-  public usuario?: UsuarioDevagram | null = null;
+  public usuario: UsuarioDevagram | null = null;
+  private usuarioLogado?: UsuarioLogado | null;
 
   constructor(
     private servicoRotaAtual: ActivatedRoute,
-    private servicoUsuario: DevagramUsuarioApiService
-  ) { }
+    private servicoUsuario: DevagramUsuarioApiService,
+    private servicoAutenticacao: AutenticacaoService
+  ) {
+    this.usuarioLogado = this.servicoAutenticacao.obterUsuarioLogado();
+  }
 
   ngOnInit(): void {
     this.servicoRotaAtual.params.subscribe(params => {
-     this.carregarPerfilDoUsuario(params['idUsuario']);
+      let idUsuarioUrl = params['idUsuario'];
+      if (idUsuarioUrl === 'pessoal') {
+        idUsuarioUrl = this.usuarioLogado?.id;
+      }
+
+     this.carregarPerfilDoUsuario(idUsuarioUrl);
     });
   }
 
