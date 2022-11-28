@@ -32,9 +32,12 @@
           <span>Seguindo</span>
         </div>
       </div>
+
       <app-botao
         classeCss="btnCabecalhoPerfil"
-        texto="Seguir"
+        [cor]="obterCorBotaoPrincipal()"
+        [texto]="obterTextoBotaoPrincipal()"
+        (click)="alternarSeguir()"
       ></app-botao>
     </div>
   </div>
