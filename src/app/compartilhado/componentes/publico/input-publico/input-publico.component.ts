@@ -20,7 +20,7 @@ export class InputPublicoComponent implements OnInit {
 
   public aoModificarCampo(event: any): void {
     this.referenciaFormulario?.setValue(event);
-    this.referenciaFormulario?.markAsDirty;
+    this.referenciaFormulario?.markAsDirty();
   }
 
   public obterMensagemErro(): string {
