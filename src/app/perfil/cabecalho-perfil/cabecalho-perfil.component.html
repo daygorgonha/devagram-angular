@@ -10,8 +10,12 @@
     <h3>{{ usuario?.nome}}</h3>
   </div>
 
+  <hr class="linhaHorizontal"/>
+
   <div class="estatisticas">
-    <app-avatar [src]="usuario?.avatar"></app-avatar>
+    <app-avatar
+    [src]="usuario?.avatar"
+    classeCss="avatarPerfil"></app-avatar>
 
     <div class="conteudoEstatisticas">
       <div class="numeros">
@@ -29,6 +33,7 @@
         </div>
       </div>
       <app-botao
+        classeCss="btnCabecalhoPerfil"
         texto="Seguir"
       ></app-botao>
     </div>
