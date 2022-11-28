@@ -16,6 +16,7 @@ import { RodapePaginaPublicaComponent } from './componentes/publico/rodape-pagin
 import { FeedComponent } from './componentes/feed/feed.component';
 import { PostagemComponent } from './componentes/feed/postagem/postagem.component';
 import { CabecalhoComponent } from './componentes/layout/cabecalho/cabecalho.component';
+import { CabecalhoComAcoesComponent } from './componentes/cabecalho-com-acoes/cabecalho-com-acoes.component';
 
 
 
@@ -42,7 +43,8 @@ import { CabecalhoComponent } from './componentes/layout/cabecalho/cabecalho.com
     PostagemComponent,
     CabecalhoComponent,
     RodapeComponent,
-    NavegacaoComponent
+    NavegacaoComponent,
+    CabecalhoComAcoesComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +62,8 @@ import { CabecalhoComponent } from './componentes/layout/cabecalho/cabecalho.com
     FeedComponent,
     PostagemComponent,
     CabecalhoComponent,
-    RodapeComponent
+    RodapeComponent,
+    CabecalhoComAcoesComponent,
   ]
 })
 export class CompartilhadoModule { }

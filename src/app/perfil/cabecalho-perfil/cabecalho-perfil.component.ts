@@ -26,7 +26,20 @@ export class CabecalhoPerfilComponent implements OnInit {
     }
   }
 
-  public async alternarSeguir(): Promise <void> {
+  public async manipularCliqueBotaoPrincipal(): Promise <void> {
+    if (this.estaPerfilPessoal) {
+      this.redirecionarParaTelaDeEdicaoDePerfil();
+      return;
+    }
+
+    await this.alternarSeguir();
+  }
+
+  public redirecionarParaTelaDeEdicaoDePerfil() {
+    this.router.navigateByUrl('/perfil/pessoal/editar');
+  }
+
+  private async alternarSeguir() {
     if (!this.usuario) {
       return;
     }
