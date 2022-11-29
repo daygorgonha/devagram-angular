@@ -22,6 +22,7 @@
             [imagemPrevisualizacao]="usuarioLogado?.avatar"
             classeCssImagemPrevisualizacao="avatarEdicaoPerfil"
             classeCssContainer="uploadImagemEdicaoPerfil"
+            (aoAtualizarImagem)="manipularAtualizacaoImagem($event)"
           >
             <span>Alterar foto do perfil</span>
           </app-upload-imagem>
