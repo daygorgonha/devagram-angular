@@ -1,24 +1,29 @@
 <div class="layoutInterno">
   <app-cabecalho class="desktop"></app-cabecalho>
 
-  <div class="conteudoInterno conteudoDesktop">
+  <div class="conteudoInterno conteudoDesktop" [formGroup]="form">
     <div class="containerPublicacao">
       <app-cabecalho-com-acoes
-        [textoAcaoEsquerda]="obterTextoAcaoEsquerda()"
         titulo="Nova Publicação"
+        [srcImagemEsquerda]="obterImagemEsquerda()"
         [textoAcaoDireita]="obterTextoAcaoDireita()"
+        (aoClicarAcaoDireita)="manipularCliqueAcaoDireita()"
+        (aoClicarAcaoEsquerda)="manipularCliqueAcaoEsquerda()"
+
       >
       </app-cabecalho-com-acoes>
 
       <hr class="linhaHorizontal" />
 
       <div class="conteudoPublicacao">
-        <div class="primeiraEtapa">
+        <div class="primeiraEtapa"
+            *ngIf="estaNaPrimeiraEtapa()">
           <app-upload-imagem
             [referenciaFormulario]="obterReferenciaInput('file')"
-            [imagemPrevisualizacao]="'assets/imagens/imagemPublicacao.svg'"
+            [imagemPrevisualizacao]="obterImagemPrevisualizacao()"
             classeCssImagemPrevisualizacao="imagemPrevisualizacaoPublicacao"
             classeCssContainer="paginaPublicacao"
+            (aoAtualizarImagem)="armazenarImagemPrevisualizacao($event)"
           >
             <span class="textoArraste desktop">Arraste sua foto aqui!</span>
             <app-botao
@@ -27,7 +32,25 @@
             ></app-botao>
           </app-upload-imagem>
         </div>
-        <div class="segundaEtapa"></div>
+
+        <div class="segundaEtapa"
+          *ngIf="estaNaSegundaEtapa()">
+
+          <app-upload-imagem
+            [referenciaFormulario]="obterReferenciaInput('file')"
+            [imagemPrevisualizacao]="obterImagemPrevisualizacao()"
+            classeCssImagemPrevisualizacao="imagemPrevisualizacaoPublicacao2Etapa"
+            classeCssContainer="paginaPublicacao"
+            (aoAtualizarImagem)="armazenarImagemPrevisualizacao($event)"
+          >
+          </app-upload-imagem>
+
+          <textarea
+            placeholder="Escreva uma legenda..."
+            formControlName="descricao"
+            rows="5"></textarea>
+        </div>
+        <p></p>
       </div>
     </div>
   </div>
