@@ -20,7 +20,7 @@
           <app-upload-imagem
             [referenciaFormulario]="obterReferenciaInput('file')"
             [imagemPrevisualizacao]="usuarioLogado?.avatar"
-            classeCssImagemPrevisualizacao="avatarEdicaoPerfil"
+            classeCssImagemPrevisualizacao="avatarEdicaoPerfil bordaGradienteAvatar"
             classeCssContainer="uploadImagemEdicaoPerfil"
             (aoAtualizarImagem)="manipularAtualizacaoImagem($event)"
           >

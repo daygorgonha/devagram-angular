@@ -1,4 +1,4 @@
-@import '../../../../assets/estilos/variaveis.scss';
+@import "../../../../assets/estilos/variaveis.scss";
 
 .avatar {
   height: 32px;
@@ -10,10 +10,10 @@
   &.avatarPerfil {
     height: 80px;
     width: 80px;
-    margin-right: 24px;
+    margin-right: 20px;
   }
 
-  @media screen and (min-width: $breakpointDesktop){
+  @media screen and (min-width: $breakpointDesktop) {
     &.feedDesktop {
       height: 50px;
       width: 50px;
