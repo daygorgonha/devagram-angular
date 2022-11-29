@@ -1,0 +1,37 @@
+@import '../../assets/estilos/variaveis.scss';
+
+.containerPublicacao {
+  background-color: var(--branco);
+
+  .conteudoPublicacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .primeiraEtapa {
+      text-align: center;
+      padding-top: 40%;
+    }
+  }
+
+  @media screen  and (min-width: $breakpointDesktop) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    .conteudoPublicacao {
+      flex: 1;
+
+      .primeiraEtapa {
+        app-upload-imagem {
+          .textoArraste {
+            color: var(--cinza4);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+}

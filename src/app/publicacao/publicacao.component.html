@@ -1,0 +1,36 @@
+<div class="layoutInterno">
+  <app-cabecalho class="desktop"></app-cabecalho>
+
+  <div class="conteudoInterno conteudoDesktop">
+    <div class="containerPublicacao">
+      <app-cabecalho-com-acoes
+        [textoAcaoEsquerda]="obterTextoAcaoEsquerda()"
+        titulo="Nova Publicação"
+        [textoAcaoDireita]="obterTextoAcaoDireita()"
+      >
+      </app-cabecalho-com-acoes>
+
+      <hr class="linhaHorizontal" />
+
+      <div class="conteudoPublicacao">
+        <div class="primeiraEtapa">
+          <app-upload-imagem
+            [referenciaFormulario]="obterReferenciaInput('file')"
+            [imagemPrevisualizacao]="'assets/imagens/imagemPublicacao.svg'"
+            classeCssImagemPrevisualizacao="imagemPrevisualizacaoPublicacao"
+            classeCssContainer="paginaPublicacao"
+          >
+            <span class="textoArraste desktop">Arraste sua foto aqui!</span>
+            <app-botao
+              texto="Selecione uma imagem"
+              classCss="botaoPublicacao"
+            ></app-botao>
+          </app-upload-imagem>
+        </div>
+        <div class="segundaEtapa"></div>
+      </div>
+    </div>
+  </div>
+
+  <app-rodape></app-rodape>
+</div>
