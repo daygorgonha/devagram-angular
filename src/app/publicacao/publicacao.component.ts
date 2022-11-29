@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { PublicacaoService } from './publicacao.service';
 import {
   FormGroup,
   FormBuilder,
@@ -16,7 +18,11 @@ export class PublicacaoComponent implements OnInit {
   public etapaAtual: number = 1;
   public imagemPrevisualizacao?: string;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private servicoPublicacao: PublicacaoService,
+    private router: Router
+  ) {
     this.form = this.fb.group({
       file: [null, Validators.required],
       descricao: [null, [Validators.required, Validators.minLength(3)]],
@@ -65,10 +71,33 @@ export class PublicacaoComponent implements OnInit {
 
   public manipularCliqueAcaoDireita() {
     if (this.estaNaSegundaEtapa()) {
+      this.cadastrarPublicacao();
       return;
     }
 
     this.etapaAtual = 2;
+  }
+
+  private async cadastrarPublicacao() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    try {
+      const valoresFormulario = this.form.value;
+      const dadosFormulario = new FormData();
+      dadosFormulario.append('file', valoresFormulario.file);
+      dadosFormulario.append('descricao', valoresFormulario.file);
+
+      await this.servicoPublicacao.publicar(dadosFormulario);
+      this.router.navigateByUrl('/');
+    } catch (e: any) {
+      alert(e.error?.erro || 'Erro ao cadastrar a publicação!');
+    }
+  }
+
+  public verificarHabilitacaoAcaoDireita(): boolean {
+    return this.estaNaSegundaEtapa() && this.form.invalid;
   }
 
   public armazenarImagemPrevisualizacao(imgPrevisualizacao: string) {
@@ -81,6 +110,14 @@ export class PublicacaoComponent implements OnInit {
     }
 
     return 'assets/imagens/imagemPublicacao.svg';
+  }
+
+  public obterClasseCssCabecalho() {
+    if (this.obterReferenciaInput('file').value) {
+      return 'cabecalhoComAcoesPublicacao';
+    }
+
+    return '';
   }
 
 }

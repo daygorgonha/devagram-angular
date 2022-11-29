@@ -5,8 +5,10 @@
     <div class="containerPublicacao">
       <app-cabecalho-com-acoes
         titulo="Nova Publicação"
+        [classeCss]="obterClasseCssCabecalho()"
         [srcImagemEsquerda]="obterImagemEsquerda()"
         [textoAcaoDireita]="obterTextoAcaoDireita()"
+        [desabilitarAcaoDireita]="verificarHabilitacaoAcaoDireita()"
         (aoClicarAcaoDireita)="manipularCliqueAcaoDireita()"
         (aoClicarAcaoEsquerda)="manipularCliqueAcaoEsquerda()"
 
