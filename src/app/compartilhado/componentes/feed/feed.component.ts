@@ -25,8 +25,6 @@ export class FeedComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log({changes});
-
     if(changes['usuario'].previousValue !== changes['usuario'].currentValue) {
       this.carregarPostagens();
     }

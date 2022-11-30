@@ -87,7 +87,7 @@ export class PublicacaoComponent implements OnInit {
       const valoresFormulario = this.form.value;
       const dadosFormulario = new FormData();
       dadosFormulario.append('file', valoresFormulario.file);
-      dadosFormulario.append('descricao', valoresFormulario.file);
+      dadosFormulario.append('descricao', valoresFormulario.descricao);
 
       await this.servicoPublicacao.publicar(dadosFormulario);
       this.router.navigateByUrl('/');

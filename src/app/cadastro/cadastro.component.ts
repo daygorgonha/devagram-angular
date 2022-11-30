@@ -49,7 +49,7 @@ export class CadastroComponent implements OnInit {
       if (valoresDoFormulario.file){
         corpoDaRequisicao.append('file', valoresDoFormulario.file);
       }
-      console.log(corpoDaRequisicao)
+
       await this.servicoCadastro.cadastrar(corpoDaRequisicao);
       await this.autenticacaoService.login({
         login: valoresDoFormulario.email,
