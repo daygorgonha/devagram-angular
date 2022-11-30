@@ -17,6 +17,7 @@ import { FeedComponent } from './componentes/feed/feed.component';
 import { PostagemComponent } from './componentes/feed/postagem/postagem.component';
 import { CabecalhoComponent } from './componentes/layout/cabecalho/cabecalho.component';
 import { CabecalhoComAcoesComponent } from './componentes/cabecalho-com-acoes/cabecalho-com-acoes.component';
+import { LoadingComponent } from './componentes/loading/loading.component';
 
 
 
@@ -44,7 +45,8 @@ import { CabecalhoComAcoesComponent } from './componentes/cabecalho-com-acoes/ca
     CabecalhoComponent,
     RodapeComponent,
     NavegacaoComponent,
-    CabecalhoComAcoesComponent
+    CabecalhoComAcoesComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
