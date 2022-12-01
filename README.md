@@ -7,10 +7,17 @@
 <br />
 
 <p align="center">Nesse projeto foi criado um clone do instagram para Devs Angular. Nele você poderá criar suas postagens, fazer comentarios, dar likes e seguir seus amigos.
-
-Link Vercel: https://devagram-angular-mfva9eef7-daygorgonha.vercel.app/login</p>
+</p>
 
 <br />
+
+<p align="center"><img src="./src/assets/imagens/desktop.png"></p>
+
+<br />
+
+<br />
+
+<p align="center">Link Vercel: https://devagram-angular-mfva9eef7-daygorgonha.vercel.app/login</p>
 
 <br />
 
